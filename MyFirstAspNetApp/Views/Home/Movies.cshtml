@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Movie>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/_Layout2.cshtml";
+}
+
+
+<h2>title</h2>
+@foreach (var movie in Model)
+{
+    <h2>@Html.ActionLink(movie.Name, "Movie", new{id=movie.Id})</h2>
+}
+
+@foreach (var studio in ViewBag.Studios)
+{
+    <h3>@studio.Name</h3>
+}
